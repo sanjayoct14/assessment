@@ -1,7 +1,7 @@
 # assessment
 ## Post request
 ### URI: localhost:8080/invoices
-
+```json
 Body:
 {
     "client": "iOCO",
@@ -20,11 +20,12 @@ Body:
         }
     ]
 }
+```
 
 ## Get Request:
 ### URI:
-1. localhost:8080/invoices
-2. localhost:8080/invoices/2
+1. localhost:8080/invoices 
+2. localhost:8080/invoices/2 
 
 ### H2 console URL: http://localhost:8080/h2-console
 1. user name: sanjay

@@ -27,5 +27,5 @@ Body:
 2. localhost:8080/invoices/2
 
 ### H2 console URL: http://localhost:8080/h2-console
-user name: sanjay
-pass:
+1. user name: sanjay
+2. pass:

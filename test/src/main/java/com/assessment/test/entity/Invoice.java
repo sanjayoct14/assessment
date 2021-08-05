@@ -8,15 +8,18 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Invoice {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name="seq", sequenceName = "inv_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
 	private Long id;
 	private String client;
 	private Long vatRate;

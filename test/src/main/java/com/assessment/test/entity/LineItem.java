@@ -4,24 +4,25 @@ import java.math.BigDecimal;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class LineItem {
 
-	@GeneratedValue
+	@SequenceGenerator(name="seq", sequenceName = "line_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
 	@Id
 	private Long id;
 	private Long quantity;
 	private String description;
 	private BigDecimal unitPrice;
 
-	//@ManyToOne(fetch = FetchType.LAZY)
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JsonIgnore
 	Invoice invoice;
